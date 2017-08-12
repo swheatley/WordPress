@@ -1,0 +1,36 @@
+.mainwp-updraftplus-tut, #mainwp-updraftplus-tips {
+	display: none;
+}
+
+.mwp-scheduled-text {
+	color: blue;
+}
+#mainwp_updraftplus_screens_tab a{
+	text-decoration: none;
+}
+
+.mainwp_ext_info_box {
+	background-color: #fff;
+	border: 1px Solid #e5e5e5;
+	padding: 1em;
+	margin-bottom: 1em;
+	text-decoration: none !important;
+}
+
+.mainwp_ext_info_box a {
+	text-decoration: none !important;
+}
+
+#the-mwp-updraftplus-list .plugin-update-tr .update-message {
+    margin:5px 20px 10px 40px;
+    background-color: #fff8e5;
+    border-left: 4px solid #ffb900;
+    padding: 1px 12px;
+}
+#the-mwp-updraftplus-list .plugin-update-tr .update-message p:before{
+    color: #f56e28;
+    content: "\f463";
+    margin-right: 6px;
+    margin-top: 6px;
+    vertical-align: bottom;
+}

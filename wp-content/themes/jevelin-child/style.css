@@ -1,0 +1,17 @@
+/*
+Theme Name: Jevelin Child
+Author: Shaylee Hansen
+Version: 1.0
+Template: jevelin
+*/
+
+
+/* Reference the Parent Theme Child Sheet - Override - */
+
+@import url("../jevelin/style.css");
+@import url("../jevelin/css/responsive.css");
+@import url("../jevelin/css/shortcodes.css");
+
+body{
+  background-color: deeppink;
+}
