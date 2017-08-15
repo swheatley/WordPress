@@ -1,6 +1,6 @@
 <?php
 /**
- * The main template file.
+ * The main template file
  *
  * This is the most generic template file in a WordPress theme
  * and one of the two required files for a theme (the other being style.css).
@@ -14,12 +14,11 @@
 
 get_header(); ?>
 
-<?php if ( have_posts() ) : ?>
-
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main">
 
 		<?php
+		if ( have_posts() ) :
 
 			if ( is_home() && ! is_front_page() ) : ?>
 				<header>
@@ -41,13 +40,13 @@ get_header(); ?>
 
 			endwhile;
 
-			the_posts_pagination( array(
-				'prev_text' => humescores_get_svg( array( 'icon' => 'arrow-long-left', 'fallback' => true ) ) . __( 'Newer', 'humescores' ),
-				'next_text' => __( 'Older', 'humescores' ) . humescores_get_svg( array( 'icon' => 'arrow-long-right' , 'fallback' => true ) ),
-				'before_page_number' => '<span class="screen-reader-text">' . __( 'Page ', 'humescores' ) . '</span>',
-			));
+			the_posts_navigation();
 
-		?>
+		else :
+
+			get_template_part( 'template-parts/content', 'none' );
+
+		endif; ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
@@ -55,11 +54,3 @@ get_header(); ?>
 <?php
 get_sidebar();
 get_footer();
-
-
-else :
-
-	get_template_part( 'template-parts/content', 'none' );
-	return;
-
-endif;

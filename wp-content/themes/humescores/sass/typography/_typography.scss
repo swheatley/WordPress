@@ -2,15 +2,12 @@ body,
 button,
 input,
 select,
+optgroup,
 textarea {
 	color: $color__text-main;
-	font-family: $font__serif;
-	@include font-size(.9);
+	font-family: $font__main;
+	@include font-size(1);
 	line-height: $font__line-height-body;
-	
-	@media screen and (min-width: $query__small) {
-		@include font-size(1);
-	}
 }
 
 @import "headings";

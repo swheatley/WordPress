@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying archive pages.
+ * The template for displaying archive pages
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -9,26 +9,18 @@
 
 get_header(); ?>
 
-<?php
-if ( have_posts() ) : ?>
-
-	<header class="page-header">
-		<?php
-			the_archive_title( '<h1 class="page-title">', '</h1>' );
-			the_archive_description( '<div class="archive-description">', '</div>' );
-		?>
-	</header><!-- .page-header -->
-
-<?php
-else :
-
-	get_template_part( 'template-parts/content', 'none' );
-	return;
-
-endif; ?>
-
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main">
+
+		<?php
+		if ( have_posts() ) : ?>
+
+			<header class="page-header">
+				<?php
+					the_archive_title( '<h1 class="page-title">', '</h1>' );
+					the_archive_description( '<div class="archive-description">', '</div>' );
+				?>
+			</header><!-- .page-header -->
 
 			<?php
 			/* Start the Loop */
@@ -43,13 +35,13 @@ endif; ?>
 
 			endwhile;
 
-			the_posts_pagination( array(
-				'prev_text' => humescores_get_svg( array( 'icon' => 'arrow-long-left', 'fallback' => true ) ) . __( 'Newer', 'humescores' ),
-				'next_text' => __( 'Older', 'humescores' ) . humescores_get_svg( array( 'icon' => 'arrow-long-right' , 'fallback' => true ) ),
-				'before_page_number' => '<span class="screen-reader-text">' . __( 'Page ', 'humescores' ) . '</span>',
-			));
+			the_posts_navigation();
 
-		?>
+		else :
+
+			get_template_part( 'template-parts/content', 'none' );
+
+		endif; ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
